@@ -15,13 +15,19 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
 import {MatOptionModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
+import { ONamaComponent } from './o-nama/o-nama.component';
+import { PocetnaComponent } from './pocetna/pocetna.component';
+import { PreporukaComponent } from './preporuka/preporuka.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AvailableApartmentsComponent,
     AddApartmentComponent,
-    HeaderComponent
+    HeaderComponent,
+    ONamaComponent,
+    PocetnaComponent,
+    PreporukaComponent
   ],
   imports: [
     BrowserModule,
