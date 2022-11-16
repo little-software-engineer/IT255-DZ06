@@ -1,0 +1,14 @@
+<div class="header">
+  <h2>Preporuke</h2>
+</div>
+<mat-card class="content" *ngFor="let preporuka of preporuke">
+  <mat-card-content>
+    <mat-card-title>Naziv: {{preporuka.title}}</mat-card-title>
+    <p>Opis: </p>
+    <p>{{preporuka.desc}}</p>
+  </mat-card-content>
+  <mat-card-content class="section">
+    <p>Cena: <span class="text">${{preporuka.price}}</span></p>
+    <button mat-flat-button color="primary">Rezervisi</button>
+  </mat-card-content>
+</mat-card>
