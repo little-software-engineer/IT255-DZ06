@@ -2,6 +2,27 @@
   flex: 1 1 auto;
 }
 
+.example-spacer2 {
+  flex: 1 1 auto;
+}
+
+
 .logo {
+  cursor: pointer;
+}
+
+
+.about{
+  align-items: center;
+  cursor: pointer;
+}
+
+.home{
+  align-items: center;
+  cursor: pointer;
+}
+
+.sugg{
+  align-items: center;
   cursor: pointer;
 }
