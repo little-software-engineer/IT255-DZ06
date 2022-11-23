@@ -19,8 +19,27 @@
           <mat-form-field>
             <mat-label>Opis</mat-label>
             <input formControlName="desc" matInput required type="text">
+            <p class="alert alert-danger" *ngIf="form.controls['desc'].hasError('minlength')">
+              Opis mora sadrzati najmanje 6 karaktera!
+          </p>
           </mat-form-field>
         </div>
+        <mat-label>Dodatne usluge:</mat-label> <br/>
+
+<mat-checkbox formControlName="klima" #klima>Klima</mat-checkbox>
+<div *ngIf="klima.checked" id="bonusOptionsGroup">
+  <p>Vas racun je uvecan za 450 dinara</p>
+  </div>
+<br />
+<mat-checkbox formControlName="minibar" #minibar>Mini-Bar</mat-checkbox>
+<div *ngIf="minibar.checked" id="bonusOptionsGroup">
+  <p>Vas racun je uvecan za 780 dinara</p>
+  </div>
+<br />
+<mat-checkbox formControlName="sauna" #sauna>Sauna</mat-checkbox>
+<div *ngIf="sauna.checked" id="bonusOptionsGroup">
+  <p>Vas racun je uvecan za 1200 dinara</p>
+</div>
         <div>
           <button type="submit" mat-stroked-button color="primary">Sačuvaj</button>
         </div>
