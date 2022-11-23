@@ -13,6 +13,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatOptionModule} from '@angular/material/core';
 import {MatInputModule} from '@angular/material/input';
 import { ONamaComponent } from './o-nama/o-nama.component';
@@ -42,6 +43,7 @@ import { PreporukaComponent } from './preporuka/preporuka.component';
     MatOptionModule,
     ReactiveFormsModule,
     MatInputModule,
+    MatCheckboxModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
