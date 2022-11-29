@@ -10,6 +10,7 @@ export class AddApartmentComponent implements OnInit {
   form = new FormGroup({
     room: new FormControl(null, [Validators.required]),
     price: new FormControl(null, [Validators.required]),
+    nights: new FormControl(null, [Validators.required]),
     desc:  new FormControl(null, [Validators.required, Validators.minLength(6)]),
     klima:new FormControl(false),
     minibar:new FormControl(false),
