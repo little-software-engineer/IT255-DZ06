@@ -7,9 +7,12 @@
     <mat-card-subtitle>Sprat: {{apartment.floor}}</mat-card-subtitle>
     <p>Opis sobe: </p>
     <p>{{apartment.desc}}</p>
+    <p>Cena po noci: <span class="text">${{apartment.price}}</span></p>
+    <p>Broj noci: <span class="text">${{apartment.nights}}</span></p>
+    <br />Ukupna cena: {{price()}}$
   </mat-card-content>
   <mat-card-content class="section">
-    <p>Cena: <span class="text">${{apartment.price}}</span></p>
+
     <button mat-flat-button color="primary">Kupi</button>
   </mat-card-content>
 </mat-card>
