@@ -1,0 +1,37 @@
+{
+  "rooms": [
+    {
+      "id": 1,
+      "room": "Waldorf Astoria Palm Springs",
+"floor": 2,
+      "price": 1000,
+      "nights": 3,
+      "desc": "Prelepi hotel u centru grada, sa bazenom, spa, ..."
+      
+    },
+    {
+       "id": 2,
+      "room": "Hard Rock Hotel Bukurest",
+"floor": 4,
+      "price": 1000,
+      "nights": 3,
+      "desc": "Prelepi hotel u centru grada, sa bazenom, spa, ..."
+    },
+    {
+      "id": 3,
+      "room": "Hilton Belgrade",
+"floor": 6,
+      "price": 1000,
+      "nights": 3,
+      "desc": "Prelepi hotel u centru grada, sa bazenom, spa, ..."
+    },
+    {
+       "id": 4,
+      "room": "Four Seasons Prague",
+"floor": 5,
+      "price": 1000,
+      "nights": 3,
+      "desc": "Prelepi hotel u centru grada, sa bazenom, spa, ..."
+    }
+]
+}

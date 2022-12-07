@@ -19,6 +19,9 @@ import {MatInputModule} from '@angular/material/input';
 import { ONamaComponent } from './o-nama/o-nama.component';
 import { PocetnaComponent } from './pocetna/pocetna.component';
 import { PreporukaComponent } from './preporuka/preporuka.component';
+import { DataService } from './services/data.service';
+import { EditRoomComponent } from './edit-room/edit-room.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,9 @@ import { PreporukaComponent } from './preporuka/preporuka.component';
     HeaderComponent,
     ONamaComponent,
     PocetnaComponent,
-    PreporukaComponent
+    PreporukaComponent,
+
+    EditRoomComponent
   ],
   imports: [
     BrowserModule,
@@ -42,10 +47,11 @@ import { PreporukaComponent } from './preporuka/preporuka.component';
     MatSelectModule,
     MatOptionModule,
     ReactiveFormsModule,
+    HttpClientModule,
     MatInputModule,
     MatCheckboxModule,
   ],
-  providers: [],
+ providers: [DataService, HttpClientModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
