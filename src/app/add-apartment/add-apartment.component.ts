@@ -1,5 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
+import { Router } from '@angular/router';
+import { room } from '../models/room.model';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-add-apartment',
@@ -7,35 +10,38 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./add-apartment.component.scss']
 })
 export class AddApartmentComponent implements OnInit {
-  form = new FormGroup({
-    room: new FormControl(null, [Validators.required]),
-    price: new FormControl(null, [Validators.required]),
-    nights: new FormControl(null, [Validators.required]),
-    desc:  new FormControl(null, [Validators.required, Validators.minLength(6)]),
-    klima:new FormControl(false),
-    minibar:new FormControl(false),
-    sauna:new FormControl(false)
-  });
+  addForm!: FormGroup;
+  constructor(private fb: FormBuilder, private dataService: DataService, private router: Router) { }
 
-  @Output() apartmentObject: EventEmitter<any> = new EventEmitter<any>();
-  apartment: any;
-
-  constructor() { }
 
   ngOnInit(): void {
+    this.addForm = this.fb.group({
+      room: ['', Validators.required],
+      floor: ['', Validators.required],
+      price: ['', Validators.required],
+      nights: ['', Validators.required],
+      desc: ['', Validators.required],
+      klima:new FormControl(false),
+    minibar:new FormControl(false),
+    sauna:new FormControl(false)
+    })
+
   }
 
-  save(): void {
-    if (this.form.valid) {
-      this.apartment = this.form.value;
-      this.apartmentObject.emit(this.apartment);
+  onSubmit(){
+    if(!this.addForm.valid){
+      return;
     }
-  }
+    const room= this.addForm.controls['room'].value;
+    const floor = this.addForm.controls['floor'].value;
+    const price = this.addForm.controls['price'].value;
+    const nights = this.addForm.controls['nights'].value;
+    const desc = this.addForm.controls['desc'].value;
 
-  onSubmit(value: string): void {
+    let newroom = new room(0, room, floor, price, nights, desc);
+    console.log(newroom);
 
-
-    console.log('Uspesno ste dodali sobu!');
+    this.dataService.create(newroom).subscribe(room => this.router.navigate(['/ponuda', room.id]));
 
   }
 }

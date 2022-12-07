@@ -2,7 +2,7 @@
   <mat-card class="content">
     <h3>Dodajte nov apartman</h3>
     <mat-card-content>
-      <form (ngSubmit)="save()" [formGroup]="form">
+      <form (ngSubmit)="onSubmit()" [formGroup]="addForm">
           <div>
             <mat-form-field>
               <mat-label>Broj sobe</mat-label>
@@ -25,7 +25,7 @@
           <mat-form-field>
             <mat-label>Opis</mat-label>
             <input formControlName="desc" matInput required type="text">
-            <p class="alert alert-danger" *ngIf="form.controls['desc'].hasError('minlength')">
+            <p class="alert alert-danger" *ngIf="addForm.controls['desc'].hasError('minlength')">
               Opis mora sadrzati najmanje 6 karaktera!
           </p>
           </mat-form-field>
