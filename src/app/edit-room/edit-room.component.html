@@ -1,0 +1,26 @@
+<div class="container">
+    <h2 class="text-center">Editing room</h2>
+    <form class="form" [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="room">Room:</label>
+            <input type="text" class="form-control" formControlName="room">
+        </div>
+        <div class="form-group">
+            <label for="floor">Floor:</label>
+            <input type="text" class="form-control" id="floor" formControlName="floor">
+        </div>
+        <div class="form-group">
+            <label for="price">Price:</label>
+            <input type="text" class="form-control" id="price" formControlName="price">
+        </div>
+        <div class="form-group">
+            <label for="nights">Nights:</label>
+            <input type="text" class="form-control" id="nights" formControlName="nights">
+        </div>
+        <div class="form-group">
+          <label for="desc">Description:</label>
+          <input type="text" class="form-control" id="desc" formControlName="desc">
+      </div>
+        <button type="submit" class="btn btn-primary btn-large">Edit</button>
+    </form>
+</div>
