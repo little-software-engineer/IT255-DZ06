@@ -1,18 +1,21 @@
-<div class="header">
-  <h2>Pregled dostupnih apartmana</h2>
-</div>
-<mat-card class="content" *ngFor="let apartment of availableApartments">
-  <mat-card-content>
-    <mat-card-title>Broj sobe: {{apartment.room}}</mat-card-title>
-    <mat-card-subtitle>Sprat: {{apartment.floor}}</mat-card-subtitle>
-    <p>Opis sobe: </p>
-    <p>{{apartment.desc}}</p>
-    <p>Cena po noci: <span class="text">${{apartment.price}}</span></p>
-    <p>Broj noci: <span class="text">${{apartment.nights}}</span></p>
-    <br />Ukupna cena: {{price()}}$
-  </mat-card-content>
-  <mat-card-content class="section">
+<app-header></app-header>
+<form>
+    <div class='raspolozivo'>
+        <h2>Raspolozivi hoteli</h2>
+    </div>
 
-    <button mat-flat-button color="primary">Kupi</button>
-  </mat-card-content>
-</mat-card>
+
+    <div class='product' *ngFor="let room of todoList">
+        <ul>
+            <li>
+                <div class='product2'>
+                    <h3> {{room.room}} </h3>
+                    <p class='postavio'>Sprat: {{room.floor}} </p>
+                    <input class='pogledaj' [routerLink]="['/ponuda', room.id]" type='submit' value='Pogledaj'>
+
+
+                </div>
+            </li>
+        </ul>
+    </div>
+</form>

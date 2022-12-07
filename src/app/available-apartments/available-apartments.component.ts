@@ -1,6 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, HostBinding, Input, OnInit} from '@angular/core';
+import { Router } from '@angular/router';
 import { RoomServiceService } from 'src/app/services/room-service.service';
+import { room } from '../models/room.model';
 import { Room } from '../modules/Room';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-available-apartments',
@@ -9,49 +12,35 @@ import { Room } from '../modules/Room';
 })
 export class AvailableApartmentsComponent implements OnInit {
 
-  @Input() room: Room;
+  @Input()
+  room!: Room;
 
   [x: string]: any;
   public pricesSum: any;
   public apartmani: any;
-  public availableApartments = [
-    {
-      room: 1,
-      floor: 1,
-      price: 600,
-      nights: 5,
-      desc: 'Hotel Waldorf Astoria u centru Berlina' +
-        ' je jedan od najlepsih hotela sa 5 zvezdica ' +
-        'u ovom delu Evrope' +
-        ' sa renomiranom ponudom koja nudi  ' +
-        'sve sto je potrebno za kompletan ugodjaj'
-    },
-    {
-      room: 2,
-      floor: 1,
-      price: 1000,
-      nights: 3,
-      desc: 'Hotel Hard Rock Moskva' +
-        ' je jos jedan u nizu tematskih hotela '  +
-        'ove poznate fransize tematskih restorana' +
-        ' koje krasi bogata ponuda' +
-        'kao i titula od 5 zvezdica'
-    },
-  ];
+  todoList:any = [];
+    rooms: room[] = [];
 
-  @Input() newApartment: any;
+    @HostBinding('class') classes = "mt-3 container";
 
+    constructor(private router: Router, private dataService: DataService, private room_service: RoomServiceService) {
 
-  constructor(private room_service: RoomServiceService) {
-    this.room = new Room(3, 3, 600, 5, "Hotel u centru Beogarda zraci svojim luksuzom")
+     }
 
-  }
-
-  ngOnInit(): void {
-    if (this.newApartment) {
-      this.availableApartments.push(this.newApartment);
+     ngOnInit(): void {
+      this.listTodos();
     }
-  }
+
+    listTodos(){
+      this.dataService.list().subscribe((response)=>{
+        this.todoList = response;
+      }
+      )
+    }
+
+    seeDetails(id: number){
+      this.router.navigate(['/ponuda', id]);
+    }
 
   public price() {
     this.pricesSum = this.room.nights * this.room.price;
