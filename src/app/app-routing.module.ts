@@ -8,7 +8,7 @@ import {AvailableApartmentsComponent} from './available-apartments/available-apa
 import { EditRoomComponent } from './edit-room/edit-room.component';
 import { SingleApartmentComponent } from './single-apartment/single-apartment.component';
 
-//Dodate su odgovarajuće rute IT255-DZ11
+//Dodate su odgovarajuće rute IT255-DZ11 i povezane sa komponentama 
 const routes: Routes = [
   {
     path: 'ponuda',
