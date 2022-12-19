@@ -1,3 +1,4 @@
+//pogled, odnosno view za individualnu sobu i njene detalje
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { room } from 'src/app/models/room.model';
