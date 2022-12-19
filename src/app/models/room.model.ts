@@ -1,3 +1,4 @@
+//IT255-DZ12 modelska klasa za entitet soba
 export class room{
     id: number;
     room: number;
