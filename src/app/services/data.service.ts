@@ -1,4 +1,4 @@
-
+//Servisna klasa
 import { Injectable } from '@angular/core';
 import { room } from '../models/room.model';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
