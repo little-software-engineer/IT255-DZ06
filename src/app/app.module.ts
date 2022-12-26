@@ -22,6 +22,10 @@ import { PreporukaComponent } from './preporuka/preporuka.component';
 import { DataService } from './services/data.service';
 import { EditRoomComponent } from './edit-room/edit-room.component';
 import { HttpClientModule } from '@angular/common/http';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { RoomEffect } from './store/effects/room.effects';
+import { reducers } from './store/reducers';
 
 @NgModule({
   declarations: [
@@ -50,6 +54,8 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     MatInputModule,
     MatCheckboxModule,
+    EffectsModule.forRoot([RoomEffect]),
+    StoreModule.forRoot(reducers)
   ],
  providers: [DataService, HttpClientModule],
   bootstrap: [AppComponent]
