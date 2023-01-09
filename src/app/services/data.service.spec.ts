@@ -6,7 +6,7 @@ import { ReactiveFormsModule, FormsModule } from "@angular/forms";
 import {AddApartmentComponent } from "./add-apartment.component";
 
 describe('DataService', () => {
-  let dataService: dataService;
+  let dataService: DataService;
   let httpClientSpy: jasmine.SpyObj<HttpClient>;
   let httpClient: HttpClient;
   let httpTestingController: HttpTestingController;
